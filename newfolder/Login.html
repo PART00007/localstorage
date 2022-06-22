@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            margin:auto;
+            margin-right: 380px;
+            
+            
+        }
+        label{
+ margin-left: 10px;
+        }
+        input{
+            width: 400px;
+            padding: 15px;
+            margin: 10px;
+        }
+        #Sign_In{
+            border: 1px solid black;
+            width: 35%;
+            margin: auto;
+            margin-top: 100px;
+            height: 450px;
+        }
+        h1{
+            text-align: center;
+        }
+      
+        #subbtn{
+            margin-left: 20px;
+        }
+        h3{
+            text-align: center;
+            margin-left: 50px;
+            width: 400px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="Sign_In">
+        <h1>Sign In</h1>
+        <form action="">
+            <label for="">Email</label>
+            <input type="text" placeholder="Enter your Email" id="email">
+            <label for="">Password</label>
+            <input type="password" placeholder="Enter Your Password" id="password">
+       
+           
+       
+     
+       
+           <input type="submit" value="Sign In" id="subbtn">
+           <h3>Don't have an account?
+           <span><a href="./SignUp.html"> Sign Up</a>
+           </span> </h3>
+          
+            </form>
+            
+
+    </div>
+   
+
+    <script>
+     document.querySelector("form").addEventListener('submit',loginfn)
+    var registeruser=JSON.parse(localStorage.getItem("Userdata"));
+    function loginfn(){
+
+        event.preventDefault();
+        var enteremail=document.querySelector("#email").value;
+        var enterpass=document.querySelector("#password").value;
+    
+       registeruser.forEach(userdata => {
+           if(userdata.email===enteremail && userdata.password===enterpass){
+               alert("login success")
+             
+        
+
+           }else{
+               alert("incorrect details")
+           }
+       });
+    }
+     
+        </script>
+     
+
+
+</body>
+</html>
+</body>
+</html>

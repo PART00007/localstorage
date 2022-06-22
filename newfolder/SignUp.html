@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            margin:auto;
+            margin-right: 380px;
+            
+            
+        }
+        label{
+ margin-left: 10px;
+        }
+        input{
+            width: 400px;
+            padding: 15px;
+            margin: 10px;
+        }
+        #Sign_Up{
+            border: 1px solid black;
+            width: 35%;
+            margin: auto;
+            margin-top: 100px;
+            height: 500px;
+        }
+        h1{
+            text-align: center;
+        }
+      
+        #subbtn{
+            margin-left: 20px;
+        }
+        h3{
+            text-align: center;
+            margin-left: 50px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="Sign_Up">
+        <h1>Sign Up</h1>
+        <form action="">
+            <label for="">Full Name</label>
+            <input type="text" placeholder="Enter your full name" id="name">
+            <label for="">Email</label>
+            <input type="text" placeholder="Enter Your Email" id="email">
+       
+            <label for="">Password</label>
+            <input type="text" placeholder="Enter Password" id="password">
+       
+     
+       
+           <input type="submit" value="Sign Up" id="subbtn">
+           <h3>Already have an account?
+           <span><a href="./Login.html"> Sign In</a>
+           </span> </h3>
+            </form>
+            
+
+    </div>
+   
+
+    <script>
+        document.querySelector("form"),addEventListener("submit",savedata)
+     
+        var userdata=JSON.parse(localStorage.getItem("Userdata"))|| [];
+
+        function savedata(){
+            event.preventDefault()
+            var userObj={
+             neme:document.querySelector("#name").value,
+             email:document.querySelector("#email").value,
+             password:document.querySelector("#password").value
+         }
+         userdata.push(userObj)
+         localStorage.setItem("Userdata",JSON.stringify(userdata))
+        }
+        </script>
+     
+
+</form>
+</body>
+</html>
